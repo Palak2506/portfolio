@@ -17,7 +17,7 @@ A modern, recruiter-ready personal portfolio built with React (Vite), Tailwind C
 
 1. **Clone / open the project**
    ```bash
-   cd Portofolio
+   cd Portfolio
    ```
 
 2. **Install dependencies**

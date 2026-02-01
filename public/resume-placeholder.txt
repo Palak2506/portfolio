@@ -1,3 +1,0 @@
-Place your resume PDF here and rename it to: resume.pdf
-
-The "Download Resume" button in the Hero and Footer will link to /resume.pdf.

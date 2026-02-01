@@ -7,21 +7,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        teal: {
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
+        /* Background layers */
+        bg: {
+          main: "#0E0F12",     // deep ink
+          soft: "#14161B",     // elevated surface
+          subtle: "#1A1D24",   // cards / sections
         },
-        dark: {
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+
+        /* Text tones */
+        text: {
+          primary: "#E6E7EB",   // soft white
+          secondary: "#A1A6B3", // muted steel
+          muted: "#6B7280",     // metadata
+        },
+
+        /* Accent (used VERY sparingly) */
+        accent: {
+          primary: "#6EE7B7",   // soft mint
+          muted: "#34D399",
+        },
+
+        /* Borders / separators */
+        line: {
+          subtle: "rgba(255,255,255,0.06)",
         },
       },
+
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
+};

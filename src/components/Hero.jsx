@@ -1,74 +1,112 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
-const RESUME_PATH = '/resume.pdf'
+const RESUME_PATH = "/resume.pdf";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 pt-24 pb-16 px-4 md:px-6 lg:px-8 max-w-6xl mx-auto"
+      className="relative min-h-screen overflow-hidden
+                 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]
+                 from-teal-500/10 via-[#0B0F14] to-[#0B0F14]"
     >
-      {/* Photo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="flex-shrink-0"
-      >
-        <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-teal-500/30 shadow-xl shadow-teal-500/10 ring-2 ring-slate-700/50">
-          <img
-            src="/photo.jpg"
-            alt="Palak Dwivedi"
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.target.onerror = null
-              e.target.src = 'https://api.dicebear.com/7.x/initials/svg?seed=PD&backgroundColor=14b8a6'
-            }}
-          />
-        </div>
-      </motion.div>
+      {/* ambient glows */}
+      <div className="absolute -top-40 right-1/4 w-[28rem] h-[28rem] bg-teal-500/10 blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-[20rem] h-[20rem] bg-teal-400/5 blur-[100px]" />
 
-      {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.15 }}
-        className="text-center md:text-left"
-      >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-100 mb-2">
-          Palak Dwivedi
-        </h1>
-        <p className="text-teal-400 font-medium text-lg md:text-xl mb-3">
-          SDE Intern · Full Stack Intern · DevOps / Cloud Intern (AWS)
-        </p>
-        <p className="text-slate-400 text-base md:text-lg max-w-xl mb-8">
-          Building scalable products with clean code and a strong MERN foundation. Final-year CSE @ VIT.
-        </p>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8
+                      pt-28 pb-20 flex flex-col-reverse md:flex-row
+                      items-center gap-16 md:gap-24">
 
-        {/* CTAs */}
-        <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-          <a
-            href="#projects"
-            className="inline-flex items-center px-5 py-2.5 rounded-lg bg-teal-500 text-dark-950 font-semibold hover:bg-teal-400 transition-colors"
+        {/* TEXT */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="w-full md:flex-1 text-center md:text-left"
+        >
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl
+                         font-bold tracking-tight text-slate-100">
+            Palak <span className="text-teal-400">Dwivedi</span>
+          </h1>
+
+          <p className="mt-5 text-teal-400 font-medium text-lg">
+            Software Engineer · Full Stack · Cloud / DevOps
+          </p>
+
+          <p className="mt-6 text-slate-400 text-lg max-w-xl mx-auto md:mx-0">
+            I build systems that stay calm under pressure —
+            elegant interfaces backed by dependable infrastructure.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
+            <a
+              href="#projects"
+              className="px-7 py-3 rounded-xl
+                         bg-teal-500 text-[#0B0F14]
+                         font-semibold
+                         shadow-lg shadow-teal-500/30
+                         hover:bg-teal-400 hover:scale-[1.03]
+                         transition-all"
+            >
+              View Projects
+            </a>
+
+            <a
+              href={RESUME_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3 rounded-xl
+                         border border-teal-500/40
+                         text-teal-400
+                         hover:bg-teal-500/10
+                         transition"
+            >
+              Resume
+            </a>
+
+            <a
+              href="#contact"
+              className="px-7 py-3 rounded-xl
+                         border border-slate-600
+                         text-slate-300
+                         hover:border-teal-500/50
+                         hover:text-teal-400
+                         transition"
+            >
+              Contact
+            </a>
+          </div>
+
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="hidden md:block mt-16 text-sm text-slate-500"
           >
-            View Projects
-          </a>
-          <a
-            href={RESUME_PATH}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-2.5 rounded-lg border border-teal-500/50 text-teal-400 hover:bg-teal-500/10 transition-colors"
-          >
-            Download Resume
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center px-5 py-2.5 rounded-lg text-slate-300 hover:text-teal-400 border border-slate-600 hover:border-teal-500/50 transition-colors"
-          >
-            Contact Me
-          </a>
-        </div>
-      </motion.div>
+            Scroll to explore ↓
+          </motion.div>
+        </motion.div>
+
+        {/* PHOTO */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative"
+        >
+          <div className="absolute -inset-3 rounded-3xl bg-teal-500/20 blur-2xl" />
+          <div className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72
+                          rounded-3xl overflow-hidden
+                          border border-teal-500/30
+                          shadow-2xl shadow-teal-500/20">
+            <img
+              src="/photo.jpg"
+              alt="Palak Dwivedi"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      </div>
     </section>
-  )
+  );
 }

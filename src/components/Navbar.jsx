@@ -1,77 +1,70 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
-]
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-slate-800/50">
-      <nav className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo / Name */}
+    <header className="fixed top-0 inset-x-0 z-50
+                       bg-[#0B0F14]/70 backdrop-blur-xl
+                       border-b border-white/5">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6
+                      h-16 flex items-center justify-between">
         <a
           href="#hero"
-          className="text-slate-100 font-semibold text-lg hover:text-teal-400 transition-colors"
+          className="font-semibold text-slate-100
+                     hover:text-teal-400 transition"
         >
           Palak Dwivedi
         </a>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex gap-10">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="relative group">
               <a
                 href={link.href}
-                className="text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium"
+                className="text-sm text-slate-300 hover:text-teal-400 transition"
               >
                 {link.label}
               </a>
+              <span className="absolute -bottom-1 left-0 h-[2px] w-0
+                               bg-teal-400 group-hover:w-full
+                               transition-all" />
             </li>
           ))}
         </ul>
 
-        {/* Mobile menu button */}
         <button
-          type="button"
-          aria-label="Toggle menu"
-          className="md:hidden p-2 text-slate-300 hover:text-teal-400"
-          onClick={() => setMobileOpen((o) => !o)}
+          className="md:hidden text-slate-300"
+          onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
+          ☰
         </button>
       </nav>
 
-      {/* Mobile dropdown */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-slate-800/50 bg-dark-900/95"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden bg-[#0B0F14]/95 border-t border-white/5"
           >
-            <ul className="px-4 py-4 flex flex-col gap-2">
+            <ul className="px-6 py-6 space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="block py-2 text-slate-300 hover:text-teal-400 transition-colors"
                     onClick={() => setMobileOpen(false)}
+                    className="block text-slate-300 hover:text-teal-400"
                   >
                     {link.label}
                   </a>
@@ -82,5 +75,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }

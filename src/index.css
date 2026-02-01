@@ -4,14 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling for anchor links */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
 /* Base styles */
 body {
-  @apply bg-dark-950 text-slate-200 antialiased font-sans;
+  @apply bg-bg-main text-text-primary antialiased font-sans;
 }
 
 /* Section spacing consistency */
@@ -19,8 +19,13 @@ section {
   @apply py-16 md:py-24 px-4 md:px-6 lg:px-8 max-w-6xl mx-auto;
 }
 
-/* Teal accent for focus (accessibility) */
+/* Elevated surface utility */
+.surface {
+  @apply bg-bg-soft border border-line-subtle rounded-2xl;
+}
+
+/* Accessible focus styles */
 a:focus-visible,
 button:focus-visible {
-  @apply outline-none ring-2 ring-teal-500 ring-offset-2 ring-offset-dark-950;
+  @apply outline-none ring-2 ring-accent-primary ring-offset-2 ring-offset-bg-main;
 }
