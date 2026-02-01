@@ -7,7 +7,7 @@ const projects = [
     description:
       "A conversational AI platform that lets users explore Rajasthan’s cultural heritage through context-aware queries. Built with a focus on secure authentication, clean APIs, and scalable data flow.",
     tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI API", "JWT"],
-    github: "https://github.com/Palak2506/heritage-ai",
+    github: "https://github.com/Palak2506/HeritageAI",
     live: "https://heritageai-black.vercel.app/login",
     image: "/heritageai.png",
   },
@@ -17,7 +17,7 @@ const projects = [
     description:
       "A trading platform that evolved from a frontend prototype into a production-ready MERN application, designed with modular UI components and clean backend architecture.",
     tech: ["React", "Node.js", "Express", "MongoDB"],
-    github: "https://github.com/Palak2506/tradeup",
+    github: "https://github.com/Palak2506/Tradeup",
     live: null,
     image: "/tradeup.png",
   },
@@ -27,7 +27,7 @@ const projects = [
     description:
       "A full-stack job listing application featuring location-based filtering, RESTful APIs, and real-world cloud deployment considerations.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
-    github: "https://github.com/Palak2506/job-listing-app",
+    github: "https://github.com/Palak2506/joblisting-",
     live: "https://joblistingfrontend-pearl.vercel.app/",
     image: "/joblisting.png",
   },
