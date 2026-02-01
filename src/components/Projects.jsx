@@ -9,6 +9,7 @@ const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI API", "JWT"],
     github: "https://github.com/Palak2506/heritage-ai",
     live: "https://heritageai-black.vercel.app/login",
+    image: "/heritageai.png",
   },
   {
     name: "TradeUp",
@@ -18,6 +19,7 @@ const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/Palak2506/tradeup",
     live: null,
+    image: "/tradeup.png",
   },
   {
     name: "Job Listing App",
@@ -27,6 +29,17 @@ const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
     github: "https://github.com/Palak2506/job-listing-app",
     live: "https://joblistingfrontend-pearl.vercel.app/",
+    image: "/joblisting.png",
+  },
+   {
+    name: "Dwivedi Printers",
+    tagline: "A modern digital presence for a family-run printing business.",
+    description:
+      "A professional business website built for Dwivedi Printers to showcase printing services, business information, and contact details. The project focuses on clean UI, accessibility, and presenting a traditional business in a modern digital format.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
+    github: "https://github.com/Palak2506",
+    live: null,
+    image: "/dwivedi.png",
   },
 ];
 
@@ -147,10 +160,12 @@ export default function Projects() {
                                border border-teal-500/20
                                backdrop-blur-sm"
                   >
-                    <div className="absolute inset-0 flex items-center justify-center
-                                    text-xs tracking-widest text-teal-300">
-                      SYSTEM OVERVIEW
-                    </div>
+                   <img
+  src={project.image}
+  alt={`${project.name} system overview`}
+  className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+/>
+
                   </div>
                 </div>
               </motion.article>
