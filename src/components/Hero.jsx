@@ -100,7 +100,7 @@ export default function Hero() {
                           border border-teal-500/30
                           shadow-2xl shadow-teal-500/20">
             <img
-              src="/photo.jpg"
+              src="/photo.jpeg"
               alt="Palak Dwivedi"
               className="w-full h-full object-cover"
             />
