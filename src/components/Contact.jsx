@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const EMAIL = "dwivedipalak761@gmail.com";
-const LINKEDIN_URL = "https://www.linkedin.com/in/palak-dwivedi";
+const LINKEDIN_URL = "https://www.linkedin.com/in/palak-dwivedi1/";
 const GITHUB_URL = "https://github.com/Palak2506";
 
 // EmailJS config
